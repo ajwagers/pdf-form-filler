@@ -2,3 +2,5 @@
 backend/PyPDF2tester.py
 uploads/*
 output/*
+venv
+backend/__pycache__
