@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Form Filler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Form Filler</h1>
+
+        <!-- 1. Upload Section -->
+        <div class="upload-section">
+            <h2>Step 1: Upload a Fillable PDF</h2>
+            <input type="file" id="pdf-upload" accept=".pdf">
+        </div>
+
+        <!-- 2. Dynamic Form Section -->
+        <div id="form-section" class="form-section hidden">
+            <h2>Step 2: Fill Out the Form</h2>
+            <form id="dynamic-form"></form>
+            
+            <div class="form-field">
+                <label for="signature-pad">Signature (if applicable)</label>
+                <canvas id="signature-pad" width="400" height="200"></canvas>
+                <button id="clear-signature" type="button">Clear Signature</button>
+            </div>
+
+            <button id="submit-form" type="button">Generate Filled PDF</button>
+        </div>
+
+        <!-- 3. Result Section -->
+        <div id="result-section" class="result-section hidden">
+            <h2>Step 3: Download Your PDF</h2>
+            <p>Your PDF has been filled successfully!</p>
+            <a id="download-link" href="#" download="filled_form.pdf">
+                <button>Download, Sign, and Save</button>
+            </a>
+        </div>
+
+        <div id="error-message" style="color: red; margin-top: 1rem;"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
